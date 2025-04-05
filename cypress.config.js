@@ -6,7 +6,7 @@ module.exports = defineConfig({
     viewportHeight: 1080,
     watchForFileChanges: false,
     specPattern: 'cypress/e2e/**/*.feature',
-    baseUrl: 'https://sampleapp.tricentis.com/101/app.php',
+    baseUrl: 'http://sampleapp.tricentis.com/101/app.php',
 
     setupNodeEvents(on, config) {
       const cucumber = require('cypress-cucumber-preprocessor').default;

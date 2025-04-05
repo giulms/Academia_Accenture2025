@@ -15,3 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import './pages/vehicleData.page.js'
+import './pages/insurantData.page.js'
+import './pages/productData.page.js'
+import './pages/priceOption.page.js'
