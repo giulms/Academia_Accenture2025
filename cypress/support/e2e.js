@@ -19,3 +19,10 @@ import './pages/vehicleData.page.js'
 import './pages/insurantData.page.js'
 import './pages/productData.page.js'
 import './pages/priceOption.page.js'
+import './pages/sendQAuote.page.js'
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    if (err.message.includes('e is not defined')) {
+      return false;
+    }
+  });

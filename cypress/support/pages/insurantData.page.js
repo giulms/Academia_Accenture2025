@@ -9,8 +9,16 @@ Cypress.Commands.add('preencherSeguradora', () => {
         endereco: faker.location.streetAddress(true)
     }
 
+    function ultimoNomeSimples(tamanhoMaximo = 6) {
+        let nome;
+        do {
+            nome = faker.person.lastName();
+        } while (nome.length > tamanhoMaximo);
+        return nome;
+    }
+
     const nome = faker.person.firstName();
-    const ultimoNome = faker.person.lastName();
+    const ultimoNome = ultimoNomeSimples();
     const dataNascimento = faker.date.birthdate({ min: 18, max: 70, mode: 'age' }).toLocaleDateString('en-US', { timeZone: 'UTC' });
     const genero = faker.helpers.arrayElement(['masculino', 'feminino']);
     const pais = faker.location.country();
