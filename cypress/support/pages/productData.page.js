@@ -23,6 +23,5 @@ Cypress.Commands.add('preencherProduto', () => {
     } else {productElements.SELECT_CORTESIA().select('No');}
     productElements.NUMERO_COUNTER().should('have.text', '000');
     cy.log('Nenhum campo foi deixado em branco.');
-    cy.log(cy.get('#priceTable > thead > tr > :nth-child(2)'))
     productElements.BTN_NEXT().click();
 })
