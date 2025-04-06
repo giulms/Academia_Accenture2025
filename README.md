@@ -76,12 +76,12 @@ npx cypress open
 | `📁 node_modules/`                | Diretório automático que contém todas as dependências instaladas via `npm`. |
 
 ---
-## 📼 Detalhes do Desenvolvimento do Projeto
+## ▶️  Vídeo Detalhando o Desenvolvimento do Projeto
 
-<a align="center" href="https://youtu.be/Opw-NqOWjBg" target="_blank">
-  <img src="https://github.com/user-attachments/assets/321d4c85-a247-4da1-b451-8afc3b1996d6" 
-    alt="Vídeo de detalhes do desenvolvimento " 
-    width="800" 
-    style="margin-right: 20px; 
-    float: left;" />
-</a>
+<div style="text-align: center;">
+  <a href="https://youtu.be/Opw-NqOWjBg" target="_blank">
+    <img src="https://github.com/user-attachments/assets/95602afe-9510-48f6-9000-21e8e01d86df"
+         alt="Vídeo de detalhes do desenvolvimento"
+         width="800" />
+  </a>
+</div>
