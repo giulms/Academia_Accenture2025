@@ -1,6 +1,6 @@
 # 🤖 Desafio Técnico Cypress - Preencher Abas
 
-Neste projeto fiz uma automação de preenchimento de algumas abas, foi um projeto onde pude aprender bastante sobre Cypress e testes end-to-end.
+Esse é um projeto que fiz na Academia Accenture 2025, onde foi abordado conceitos de teste automatizados com Cypress e com a metodologia BDD, ao longo do caminho encontrei alguns bons desafios mas nada que não conseguisse superar, gostei bastante do resultado final, confesso que superou as minhas expectativas, um ponto que vale destacar é que nesse projeto utilizei a pasta Elements onde pude organizar melhor o mapeamento de cada página, espero que gostem do resultado!😁
 
 ---
 
@@ -15,9 +15,6 @@ Antes de começar, você precisa ter instalado:
 
 ## 🚀 Instalação
 
-Siga os passos abaixo para instalar e rodar o projeto localmente:
-
-
 # 1. Clone este repositório 
 ```
 git clone https://github.com/giulms/Academia_Accenture2025.git
@@ -30,6 +27,31 @@ cd Academia-Accenture2025
 ```
 npm install
 ```
+---
+
+## 🧪 Como executar os testes
+
+# 1. Abra o cypress no modo interativo
+```
+npx cypress open
+```
+# 2. Selecione o tipo de teste E2E Testing
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4ca9bde7-d333-48b7-bfbb-7e49b2a7b31a" alt="Print do tipo de teste em cypress" style="margin-right: 20px; float: left;" />
+</p>
+
+# 3. Selecione o navegador que vai carregar seus testes e clique em 'Start E2E Testing'
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e8daf0c6-62e7-4d11-98fe-ce2b55b547c1" alt="Print dos navegadores disponiveis" style="margin-right: 20px; float: left;" />
+</p>
+
+# 4. Pronto! Agora é so selecionar a feature que você quer testar primeiro
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/04c00bb8-2145-4132-8ae3-f43d5a63a5be" alt="Print das features disponiveis" style="margin-right: 20px; float: left;" />
+</p>
 
 ---
 
@@ -54,4 +76,6 @@ npm install
 | `📁 node_modules/`                | Diretório automático que contém todas as dependências instaladas via `npm`. |
 
 ---
+## 📼 Detalhes do Desenvolvimento do Projeto
+
 
