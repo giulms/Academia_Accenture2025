@@ -1,6 +1,6 @@
 import { Given, When, And, Then, Before, After } from 'cypress-cucumber-preprocessor/steps'
 
-When('envio as informações de  QAuote', () => {
+When('envio as informações de QAuote', () => {
     cy.preencherSendQAuote()
 })
 

@@ -8,7 +8,7 @@ const qauotElements = {
     NUMERO_COUNTER: () => cy.get('.counter.zero'),
     BTN_ENVIAR: () => cy.get('button[name="Send E-Mail"]'),
     ALERT_SUCESSO: () => cy.get('.sweet-alert'),
-    ALERT_ERRO: () => cy.get('.sweet-alert'),
+    ALERT_ERRO: () => cy.get('p[style="display: block;"]'),
 }
 
 export default qauotElements;

@@ -8,5 +8,5 @@ Funcionalidade: preencherAbas-01 - Adição de informações válidas nas págin
         E preencho a página Insurant Data com informações válidas
         E preencho a página Product Data com informações válidas
         E seleciono o seguro desejado
-        Quando envio as informações de  QAuote
+        Quando envio as informações de QAuote
         Entao valido o envio do e-mail

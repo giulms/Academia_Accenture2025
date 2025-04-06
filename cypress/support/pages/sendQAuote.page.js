@@ -66,5 +66,6 @@ Cypress.Commands.add('preencherEmailInvalido', () => {
 
 Cypress.Commands.add('validarErroEmail', () => {
     sendQAuotElements.ALERT_ERRO().should('be.visible')
+    sendQAuotElements.ALERT_ERRO().should('have.text', 'There is still some data missing!')
     cy.log('E-mail inválido.')
 })
