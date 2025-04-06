@@ -1,6 +1,10 @@
 # 🤖 Desafio Técnico Cypress - Preencher Abas
 
-Esse é um projeto que fiz na Academia Accenture 2025, onde foi abordado conceitos de teste automatizados com Cypress e com a metodologia BDD, ao longo do caminho encontrei alguns bons desafios mas nada que não conseguisse superar, gostei bastante do resultado final, confesso que superou as minhas expectativas, um ponto que vale destacar é que nesse projeto utilizei a pasta Elements onde pude organizar melhor o mapeamento de cada página, espero que gostem do resultado!😁
+Este projeto é um desafio técnico desenvolvido durante a Academia de Testes QA Accenture 2025, referente ao módulo de automação de testes com Cypress, utilizando a metodologia BDD.
+
+Para aplicação dos conceitos de Page Object Model (POM), foi realizado o mapeamento dos elementos contidos nas páginas por meio da criação e utilização da pasta "Elements", visando maior reutilização e facilidade na manutenção futura do código.
+
+Encontrei bons desafios durante a fase de desenvolvimento, os quais foram superados com perseverança e resiliência. Estou feliz com o resultado e, ainda mais, com a jornada percorrida. Espero que o resultado atenda ou, quem sabe, supere as expectativas! 😁
 
 ---
 
