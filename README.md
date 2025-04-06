@@ -78,4 +78,4 @@ npx cypress open
 ---
 ## 📼 Detalhes do Desenvolvimento do Projeto
 
-
+https://youtu.be/Opw-NqOWjBg
