@@ -78,4 +78,10 @@ npx cypress open
 ---
 ## 📼 Detalhes do Desenvolvimento do Projeto
 
-https://youtu.be/Opw-NqOWjBg
+<a align="center" href="https://youtu.be/Opw-NqOWjBg" target="_blank">
+  <img src="https://github.com/user-attachments/assets/321d4c85-a247-4da1-b451-8afc3b1996d6" 
+    alt="Vídeo de detalhes do desenvolvimento " 
+    width="800" 
+    style="margin-right: 20px; 
+    float: left;" />
+</a>
