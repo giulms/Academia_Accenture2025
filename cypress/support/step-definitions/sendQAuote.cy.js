@@ -7,3 +7,10 @@ When('envio as informações de  QAuote', () => {
 Then('valido o envio do e-mail', () => {
     cy.validarEmail()
 })
+
+When('insiro um e-mail inválido', () => {
+    cy.preencherEmailInvalido()
+})
+Then('valido a mensagem de erro', () => {
+    cy.validarErroEmail()
+})

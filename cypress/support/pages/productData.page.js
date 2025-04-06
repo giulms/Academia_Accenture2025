@@ -2,7 +2,9 @@ import { faker } from '@faker-js/faker';
 import productElements from '../../elements/productData.elements';
 
 Cypress.Commands.add('preencherProduto', () => {
-    const dataInicio = faker.date.future({ years: 3 }).toLocaleDateString('en-US', { timeZone: 'UTC' });
+    const dataAtual = new Date();
+    const dataMinima = new Date(dataAtual);
+    const dataInicio = faker.date.future({ years: 10 }, dataMinima.setFullYear(dataMinima.getFullYear() + 10)).toLocaleDateString('en-US', { timeZone: 'UTC' });
     const somaSeguro = faker.helpers.arrayElement(['3.000.000,00','5.000.000,00','7.000.000,00', '10.000.000,00', '15.000.000,00', '20.000.000,00', '25.000.000,00', '30.000.000,00']);
     const classificacaoMerito = faker.helpers.arrayElement(['Super Bonus', 'Bonus 1', 'Bonus 2', 'Bonus 3', 'Bonus 4', 'Bonus 5', 'Bonus 6', 'Bonus 7', 'Bonus 8', 'Bonus 9', 'Malus 10', 'Malus 11', 'Malus 12', 'Malus 13', 'Malus 14', 'Malus 15', 'Malus 16', 'Malus 17']);
     const danoCoberto = faker.helpers.arrayElement(['No Coverage', 'Partial Coverage', 'Full Coverage']);

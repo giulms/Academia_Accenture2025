@@ -12,16 +12,15 @@ Cypress.Commands.add('preencherSeguradora', () => {
     function ultimoNomeSimples(tamanhoMaximo = 6) {
         let nome;
         do {
-            nome = faker.person.lastName();
+            nome = faker.person.lastName().replace(/[^a-zA-Z]/g, '');
         } while (nome.length > tamanhoMaximo);
         return nome;
     }
 
     const nome = faker.person.firstName();
     const ultimoNome = ultimoNomeSimples();
-    const dataNascimento = faker.date.birthdate({ min: 18, max: 70, mode: 'age' }).toLocaleDateString('en-US', { timeZone: 'UTC' });
+    const dataNascimento = faker.date.birthdate({ min: 18, max: 65, mode: 'age' }).toLocaleDateString('en-US', { timeZone: 'UTC' });
     const genero = faker.helpers.arrayElement(['masculino', 'feminino']);
-    const pais = faker.location.country();
     const cidade = faker.location.city();
     const ocupacao = faker.helpers.arrayElement(['Employee', 'Selfemployed', 'Unemployed', 'Farmer', 'Public Official']);
     const opcoesOcupacao = ['1', '2', '3', '4', '5'];
@@ -36,7 +35,12 @@ Cypress.Commands.add('preencherSeguradora', () => {
         insurantElements.CLICK_GENERO_MASCULINO().click({force: true});
     } else {insurantElements.CLICK_GENERO_FEMININO().click({ force: true });}
     insurantElements.INPUT_ENDERECO().type(envData.endereco, {log: false});
-    insurantElements.SELECT_PAIS().select(pais);
+    insurantElements.SELECT_PAIS().then(select => { 
+        const buscar = select.find('option')
+        const paisAleatorio = Math.floor(Math.random() * (buscar.length - 1)) + 1;
+        const pais = buscar[paisAleatorio].value;
+        insurantElements.SELECT_PAIS().select(pais);
+    })
     insurantElements.INPUT_CEP().type(envData.cep, {log: false});
     insurantElements.INPUT_CIDADE().type(cidade);
     insurantElements.SELECT_OCUPACAO().select(ocupacao);

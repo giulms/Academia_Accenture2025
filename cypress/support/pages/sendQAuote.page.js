@@ -5,15 +5,40 @@ Cypress.Commands.add('preencherSendQAuote', () => {
 
     const envData = {
         email: faker.internet.email(),
-        senha: faker.internet.password(6, false),
+        senha: gerarSenha(),
     }
 
-    const telefone = faker.phone.number('##########').replace(/\D/g, '');
-    const usuario = faker.internet.userName();
+    function gerarTelefone(min = 8, max = 15) {
+        let telefone;
+        do {
+            telefone = faker.phone.number('###############').replace(/\D/g, '');
+        } while (telefone.length < min || telefone.length > max);
+        return telefone;
+    }
+
+    function gerarUsername(min = 5, max = 15) {
+        let username;
+        do {
+            username = faker.internet.userName().replace(/[^a-zA-Z0-9]/g, '');
+        } while (username.length < min || username.length > max);
+        return username;
+    }
+
+    function gerarSenha() {
+        let senha;
+        const validacao = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+        do {
+            senha = faker.internet.password(10, false, /[A-Za-z0-9]/);
+        } while (!validacao.test(senha));
+        return senha;
+    }
+
+    const numeroValido = gerarTelefone();
+    const usuario = gerarUsername();
     const comentario = faker.lorem.paragraph(1);
     
     sendQAuotElements.INPUT_EMAIL().type(envData.email, {log: false});
-    sendQAuotElements.INPUT_TELEFONE().type(telefone);
+    sendQAuotElements.INPUT_TELEFONE().type(numeroValido);
     sendQAuotElements.INPUT_USUARIO().type(usuario);
     sendQAuotElements.INPUT_SENHA().type(envData.senha,  {log: false});
     sendQAuotElements.INPUT_CONFIRM_SENHA().type(envData.senha, {log: false});
@@ -27,4 +52,19 @@ Cypress.Commands.add('preencherSendQAuote', () => {
 Cypress.Commands.add('validarEmail', () => {
     sendQAuotElements.ALERT_SUCESSO().should('be.visible')
     cy.log('Email enviado com sucesso.')
+})
+
+Cypress.Commands.add('preencherEmailInvalido', () => {
+    sendQAuotElements.INPUT_EMAIL().type(Cypress.env('emailInvalido'), {log: false});
+    sendQAuotElements.INPUT_TELEFONE().type(Cypress.env('telefone'));
+    sendQAuotElements.INPUT_USUARIO().type(Cypress.env('usuario'));
+    sendQAuotElements.INPUT_SENHA().type(Cypress.env('senha'),  {log: false});
+    sendQAuotElements.INPUT_CONFIRM_SENHA().type(Cypress.env('senha'), {log: false});
+    sendQAuotElements.INPUT_COMENTARIO().type(Cypress.env('comentario'));
+    sendQAuotElements.BTN_ENVIAR().click();
+})
+
+Cypress.Commands.add('validarErroEmail', () => {
+    sendQAuotElements.ALERT_ERRO().should('be.visible')
+    cy.log('E-mail inválido.')
 })
